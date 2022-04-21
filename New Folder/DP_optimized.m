@@ -1,3 +1,4 @@
+%针对matlab向量运算快的特点将循环改为向量，第28行
 load('UDDS_drive_cycle.mat')          %加载路谱，这里被提前计算好了轮端需求功率            
 ts = 1;                               %时间间隔
 N = length(t);                        %总时长，总阶段数
