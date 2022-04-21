@@ -1,4 +1,4 @@
-
+%æ­£å‘æ±‚è§£
 function [u_act,Pe_act,FC_act,SOC_act]=RUNHEV(SOC0,N,SOCgrd,u_opt,Pd)
     
     SOC_grid = SOCgrd;
@@ -14,10 +14,10 @@ function [u_act,Pe_act,FC_act,SOC_act]=RUNHEV(SOC0,N,SOCgrd,u_opt,Pd)
      SOC_act(1) = SOC0;
       
     for i = 1:N-1
-        u_act(i) = interp1(SOC_grid,u_opt(:,i),SOC_act(i));%²åÖµ·¨È¡µ±Ç°SOCÏÂµÄ×îÓÅ¿ØÖÆ
-        Pe_act(i) = P_dem(i) - u_act(i);                   %×îÓÅ¿ØÖÆÏÂµÄÄÚÈ¼»ú¹¦ÂÊ
-        FC_act(i) = (ts*fl_wt_en*Pe_act(i))/(eng_eff(Pe_act(i))); %È¼ÓÍÏûºÄ
-        SOC_act(i+1) = SOC_act(i) - ((ts*u_act(i))/(Q_batt*U_oc));%ÏÂÒ»½×¶ÎSOC  
+        u_act(i) = interp1(SOC_grid,u_opt(:,i),SOC_act(i));%æ’å€¼æ³•å–å½“å‰SOCä¸‹çš„æœ€ä¼˜æ§åˆ¶
+        Pe_act(i) = P_dem(i) - u_act(i);                   %æœ€ä¼˜æ§åˆ¶ä¸‹çš„å†…ç‡ƒæœºåŠŸç‡
+        FC_act(i) = (ts*fl_wt_en*Pe_act(i))/(eng_eff(Pe_act(i))); %ç‡ƒæ²¹æ¶ˆè€—
+        SOC_act(i+1) = SOC_act(i) - ((ts*u_act(i))/(Q_batt*U_oc));%ä¸‹ä¸€é˜¶æ®µSOC  
     end
 
 end
